@@ -9,8 +9,10 @@ export const CookieBox = () => {
         withCredentials: true,
       });
       console.log(response);
+      window.alert("Cookie added");
     } catch (error) {
       console.log(`error from react while adding cookie: ${error}`);
+      window.alert("Error");
     }
   };
   const deleteCookie = async (e) => {
@@ -19,17 +21,22 @@ export const CookieBox = () => {
         withCredentials: true,
       });
       console.log(response);
+      window.alert("Cookie deleted");
     } catch (error) {
       console.log(`error from react while deleting cookie: ${error}`);
+      window.alert("Error");
     }
   };
-  const value = 1234;
   return (
     <>
       <div className="main">
-        <div className="cookie-btn-container">
-          <Button tag="Create Cookie" handleClick={addCookie}></Button>
-          <Button tag="Delete Cookie" handleClick={deleteCookie}></Button>
+        <div className="cookie-btn-container flex-row-center">
+          <Button id="add" tag="Create Cookie" handleClick={addCookie}></Button>
+          <Button
+            id="delete"
+            tag="Delete Cookie"
+            handleClick={deleteCookie}
+          ></Button>
         </div>
       </div>
     </>

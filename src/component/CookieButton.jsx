@@ -1,10 +1,11 @@
 import React from "react";
 
 export const CookieButton = (props) => {
-
-    return(
-        <>
-            <button onClick={props.handleClick}>{props.tag}</button>
-        </>
-    )
-}
+  return (
+    <>
+      <button id={props.id} onClick={props.handleClick}>
+        {props.tag}
+      </button>
+    </>
+  );
+};
